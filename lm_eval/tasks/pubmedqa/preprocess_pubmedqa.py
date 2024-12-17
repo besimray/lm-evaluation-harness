@@ -1,6 +1,10 @@
 def doc_to_text(doc) -> str:
     ctxs = "\n".join(doc["CONTEXTS"])
+
+    meshes = "\n".join(doc["MESH"])
+
+    abstract = ctxs + "\n MeSH:" + meshes
     return "Abstract: {}\nQuestion: {}\nAnswer:".format(
-        ctxs,
+        abstract,
         doc["QUESTION"],
     )
